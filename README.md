@@ -4,6 +4,8 @@ Copy text. Press one shortcut. Get a real `.txt` file, ready to attach.
 
 No more: copy, open a text editor, paste, save as, find the file, attach it.
 
+![Clip2File demo: copy text, press the shortcut, paste and the file attaches](assets/demo.gif)
+
 ## How it works
 
 1. You copy any text, anywhere (`Cmd+C`)
@@ -77,6 +79,12 @@ one job, done in one press, no account, no network, no tracking.
 - If the text looks like code, keep the right extension
 - Setting for the output folder
 - Homebrew install: `brew install clip2file`
+
+## Demo GIF
+
+The demo above is an animation made with `tools/make_demo_gif.py` (Python + Pillow).
+The file name in it, `meeting-notes-for-tuesday.txt`, is the real output of
+`clip2file.sh` on the sample text shown in the demo.
 
 ## Privacy
 
