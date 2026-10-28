@@ -28,10 +28,28 @@ chmod +x install.sh clip2file.sh
 ./install.sh
 ```
 
-The installer copies the script to `~/.local/bin/clip2file` and prints the
-one-time steps to bind it to a keyboard shortcut in Apple's Shortcuts app
-(Shortcuts, new shortcut, Run Shell Script, one line, Add Keyboard Shortcut).
-That part takes about 2 minutes and you only do it once.
+The installer sets up **everything itself**. You only confirm once
+(press Enter), then it:
+
+1. Installs the command to `~/.local/bin/clip2file`
+2. Builds an Automator Quick Action named `Clip2File` in `~/Library/Services`
+3. Binds the shortcut **Control + Option + T** to it, by writing the macOS
+   Services preferences directly
+4. Refreshes the Services system
+5. Runs a self test and tells you if it passed
+
+No Automator app, no Shortcuts app, no clicking through settings.
+
+Two honest notes:
+
+- The self test uses your clipboard once. Copy your text again afterwards.
+- On some macOS versions a new Services shortcut only wakes up after a
+  log out and log in. If Control + Option + T does not answer the first
+  time, log out and back in once.
+- If you set up the older v1.0 Shortcuts-app shortcut with the same keys,
+  delete that old shortcut first so the two do not clash.
+
+To remove everything later: `./uninstall.sh`
 
 ### No-install test
 
